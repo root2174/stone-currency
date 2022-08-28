@@ -58,7 +58,13 @@ export function ResultCard({
         onClick={handleBackClick}
         data-testid="back-button"
       >
-        <Image src="/assets/arrow-left.svg" width={20} height={20} /> Voltar
+        <Image
+          src="/assets/arrow-left.svg"
+          width={20}
+          height={20}
+          alt="back arrow"
+        />{" "}
+        Voltar
       </Button>
       <Content>
         <PreResultText>O Resultado do cálculo é</PreResultText>

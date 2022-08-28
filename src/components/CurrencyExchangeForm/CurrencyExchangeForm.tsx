@@ -225,7 +225,8 @@ export function CurrencyExchangeForm() {
         variant="primary"
         disabled={isSubmitButtonDisabled()}
       >
-        {<Image src="/assets/transfer.svg" width={20} height={20} />} Converter
+        {<Image src="/assets/transfer.svg" width={20} height={20} alt="" />}{" "}
+        Converter
       </Button>
     </Form>
   );
