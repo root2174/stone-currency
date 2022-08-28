@@ -1,7 +1,5 @@
-import type { NextPage } from "next";
+import { CurrencyExchangeForm } from "../components/CurrencyExchangeForm/CurrencyExchangeForm";
 
-const Home: NextPage = () => {
-  return <div>Hello World!</div>;
-};
-
-export default Home;
+export default function Index() {
+  return <CurrencyExchangeForm />;
+}
