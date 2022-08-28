@@ -81,7 +81,7 @@ describe("useCurrencyConverter", () => {
     });
   });
 
-  test("doest calculates dollar conversion if there is a problem getting data from server", () => {
+  test("returns 0 if there is no data on server", () => {
     new MockAdapter(api).onGet("/json/last/USD-BRL").reply(400);
     const { result } = renderHook(() => useCurrencyConverter(), {
       wrapper: createWrapper(),
@@ -94,6 +94,6 @@ describe("useCurrencyConverter", () => {
         purchaseType: "cash",
         stateTaxes: 2,
       })
-    ).toBe(undefined);
+    ).toBe(0);
   });
 });
