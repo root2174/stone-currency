@@ -19,7 +19,7 @@ jest.mock("next/router", () => ({
 }));
 
 describe("CurrencyExchangeForm unit tests", () => {
-  test.only("submits form value", async () => {
+  test("submits form value", async () => {
     render(<CurrencyExchangeForm />);
     fireEvent.change(screen.getByTestId("state-taxes"), {
       target: { value: "2" },
