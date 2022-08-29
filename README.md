@@ -1,34 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- 
+   CUIDADO 
 
-## Getting Started
+   Quando editar esse readme, tome cuidado com as tags <br/> 
+   elas são importantes para alinhar as imagens
+-->
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
+<div align="center">
+   <img src=".github/brand.svg" height="90">
+</div>
+
+# Desafio web
+
+O desafio proposto foi a criação de uma aplicação em React para a conversão do valor digitado em dólar para real.
+
+A aplicação foi deployada na vercel em: https://stone-currency-tau.vercel.app/
+
+Foram utilizadas as seguintes tecnologias:
+
+- NextJS (React Framework)
+- Typescript
+- Cliente HTTP axios
+- react-query
+- styled-components
+- docker
+
+## Bibliotecas adicionais e suas justificativas:
+- date-fns e date-fns-tz: Utilizada para formatar a data atual
+- jotai: Um gerenciador de estados leve e minimalista para armazenar o valor da conversão do dólar para o real
+- react-hook-form: Usada para gerenciar o formulário de conversão, optei utilizá-la por sua maneira simplificada de lidar com diferentes estados do fomulário.
+- react-hydration-provider: Usada para renderizar o header apenas no lado do cliente.
+- react-number-format: Input para formatar os valores digitados nos campos de Dólar e Taxa do estado.
+- axios-mock-adapter: Utilizada para mockar os retornos do axios nos testes unitários
+
+
+## Rodando o projeto localmente:
+
+É possível rodar o projeto localmente utilizando o docker-compose apenas com o comando:
+
+```
+  docker-compose up --build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ou se preferir rodar sem o docker:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+- Garanta estar utilizando pelo menos a versão 14 do node e rode os seguintes comando no diretório root do projeto:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- yarn install (para baixar as dependências do projeto.)
+- yarn run dev (para rodar em http://localhost:300)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+OBS: utilize yarn test para rodar os testes unitários (Possui cobertura).
+```
 
-## Learn More
+## Critérios de avaliação 
 
-To learn more about Next.js, take a look at the following resources:
+<img align="right" src=".github/closed-fist.svg" width="90">
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Entrega
+- O resultado final está completo para ser executado?
+- O resultado final atende ao que se propõe fazer?
+- O resultado final atende totalmente aos requisitos propostos?
+- O resultado final é visualmente elegante?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<img align="right" src=".github/thumbs-up.svg" width="90">
 
-## Deploy on Vercel
+### Boas práticas
+- O código está de acordo com o guia de estilo da linguagem?
+- O código está bem estruturado?
+- O código faz o bom uso de *Design Patterns*?
+- O código possui testes?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<img align="right" src=".github/document.svg" width="90">
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Documentação
+- O código foi entregue com um arquivo de _README_ claro de como instalar e codificar no projeto?
+- O código possui comentários pertinentes?
+- O código está em algum controle de versão?
+- Os _commits_ são pequenos e consistentes?
+- As mensagens de _commit_ são claras?
+
+<br/>
+
+### **Material de estudo**
+- [Boas Práticas na Stone](https://github.com/stone-payments/stoneco-best-practices/blob/master/README_pt.md)
+- [Airbnb Javascript](https://github.com/airbnb/javascript)
+
+
+<!-- ~VARS~ -->
+<!-- API -->
+[QUOTATION_API]: https://docs.awesomeapi.com.br/api-de-moedas
+
+<!-- URLS -->
+[FIGMA_URL]: https://www.figma.com/file/y8IcDbllfaFAzXrEXR05PE/Teste-Front-Web-Stone
+
+<!-- ASSETS -->
+[FIGMA-IMAGE]: .github/figma-desafio.png
