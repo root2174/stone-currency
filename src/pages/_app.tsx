@@ -44,7 +44,7 @@ export const mainTheme = {
 
 const MoneyImage = styled.svg`
   width: 1440px;
-  height: 100vh;
+  height: 961px;
   position: absolute;
   z-index: -1;
   top: 0;
