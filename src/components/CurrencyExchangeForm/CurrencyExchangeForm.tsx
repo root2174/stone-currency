@@ -44,17 +44,18 @@ const BranchInput = styled.input`
 `;
 
 const FormRadioGroup = styled.div`
-  padding: 10px 0 20px 0;
+  padding: 10px 0 32px 0;
   display: flex;
   align-items: center;
   align-content: center;
-  font-family: "Roboto", sans-serif;
-  font-size: 15px;
+  font-family: "CircularStd";
+  font-size: 16px;
+  line-height: 24px;
 `;
 
 const RadioInputGroup = styled.div`
   display: flex;
-  align-items: center;
+  align-items: stretch;
   width: 100px;
 `;
 

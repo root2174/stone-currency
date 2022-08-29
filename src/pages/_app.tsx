@@ -7,6 +7,12 @@ import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Header } from "../components/Header/Header";
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'CircularStd';
+    src: url('../assets/CircularStd-Book.ttf');
+    font-weight: 400;
+    font-style: normal;
+  }
   body {
     margin: 0;
     padding: 0;
