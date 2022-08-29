@@ -38,7 +38,7 @@ type ResultCardProps = {
   result: string;
   purchaseType: PurchaseType;
   stateTaxes: string;
-  dollarValue: string;
+  dollarValue?: string;
   handleBackClick: MouseEventHandler<HTMLButtonElement>;
 };
 
