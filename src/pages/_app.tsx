@@ -1,6 +1,7 @@
 // import App from 'next/app'
 
 import { AppProps } from "next/app";
+import Head from "next/head";
 import { QueryClient, QueryClientProvider } from "react-query";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Header } from "../components/Header/Header";
@@ -20,10 +21,14 @@ const AppContainer = styled.div`
 
 const MainContainer = styled.main`
   background: #ffffff;
-  max-width: 50vw;
   margin: 0 0 0 50px;
-  width: 500px;
+  width: 550px;
   height: 600px;
+
+  @media (max-width: 1220px) {
+    width: 100vw;
+    height: 100vh;
+  }
 `;
 
 export const mainTheme = {
@@ -63,7 +68,11 @@ const CircularImage = styled.svg`
   background-size: cover;
 `;
 
-const Images = styled.div``;
+const Images = styled.div`
+  @media (max-width: 1220px) {
+    display: none;
+  }
+`;
 
 const queryClient = new QueryClient();
 
@@ -72,6 +81,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={mainTheme}>
       <QueryClientProvider client={queryClient}>
         <AppContainer>
+          <Head>
+            <title>Stone Currency</title>
+          </Head>
           <MainContainer>
             <GlobalStyle />
             <Header />

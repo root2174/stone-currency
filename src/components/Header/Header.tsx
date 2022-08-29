@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import { utcToZonedTime } from "date-fns-tz";
 import ptBR from "date-fns/locale/pt-BR";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Client, HydrationProvider } from "react-hydration-provider";
 import styled from "styled-components";
 
@@ -34,8 +35,19 @@ const ExchangeRateInfo = styled.span`
 `;
 
 export function Header() {
-  function getCurrentDate(formatString: string) {
-    return format(utcToZonedTime(new Date(), "UTC"), formatString, {
+  const [currentDate, setCurrentDate] = useState(
+    utcToZonedTime(new Date(), "UTC")
+  );
+
+  useEffect(() => {
+    setTimeout(
+      () => setCurrentDate(new Date()),
+      currentDate.getMilliseconds() - 60000 // updates every minute
+    );
+  }, [currentDate]);
+
+  function getCurrentDateFormatted(formatString: string) {
+    return format(utcToZonedTime(currentDate, "UTC"), formatString, {
       locale: ptBR,
     });
   }
@@ -51,8 +63,8 @@ export function Header() {
           />
           <div>
             <DateContainer>
-              <time>{getCurrentDate("d 'de' LLLL yyyy")}</time>|
-              <time>{getCurrentDate("k:mm 'UTC'")}</time>
+              <time>{getCurrentDateFormatted("d 'de' LLLL yyyy")}</time>|
+              <time>{getCurrentDateFormatted("k:mm 'UTC'")}</time>
             </DateContainer>
             <ExchangeRateInfo>
               Dados de câmbio disponibilizados pela Morningstar
