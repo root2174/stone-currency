@@ -9,7 +9,7 @@ type CalculateDollarTotal = {
 
 const IOF = {
   cash: 1.1,
-  creditCard: 6.4,
+  card: 6.4,
 };
 
 export const percentage = (partialValue: number, totalValue: number) =>
@@ -31,7 +31,7 @@ export const calculateDollarTotal = ({
       return (
         (dollarQuantity +
           percentage(stateTaxes, dollarQuantity) +
-          percentage(IOF.creditCard, dollarQuantity)) *
+          percentage(IOF.card, dollarQuantity)) *
         dollarValue
       );
   }
