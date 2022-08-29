@@ -33,6 +33,13 @@ Foram utilizadas as seguintes tecnologias:
 - react-number-format: Input para formatar os valores digitados nos campos de Dólar e Taxa do estado.
 - axios-mock-adapter: Utilizada para mockar os retornos do axios nos testes unitários
 
+## Escolhas no Design
+
+- A Fonte Sharon Sans no figma não está disponibilizada para download, por conta disso em seu lugar foi utilizada a fonte Roboto.
+- Não foi especificado no design, mas o Header atualiza a cada minuto para refletir o horário atual.
+- Existem alguns conflitos nos requisitos do projeto com o design em si, como por exemplo:
+  - Foi requirido aparecer o valor do IOF no projeto, porém não existe tal valor descrito no design, por conta disso decidir seguir o design à risca, porém caso solicitado poderia adicionar facilmente tal informação, bem como demais valores.
+
 
 ## Rodando o projeto localmente:
 
@@ -52,6 +59,12 @@ Ou se preferir rodar sem o docker:
 
 OBS: utilize yarn test para rodar os testes unitários (Possui cobertura).
 ```
+
+## Agradecimentos
+
+Foi uma honra chegar até essa etapa do processo de seleção e gostaria agradecer a equipe da Stone por ser bem solícita e atenciosa durante todo esse processo. O desafio foi muito interessante e espero que gostem do resultado! Obrigado!😊
+
+
 
 ## Critérios de avaliação 
 
