@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { utcToZonedTime } from "date-fns-tz";
 import ptBR from "date-fns/locale/pt-BR";
 import Image from "next/image";
 import { Client, HydrationProvider } from "react-hydration-provider";
@@ -34,7 +35,7 @@ const ExchangeRateInfo = styled.span`
 
 export function Header() {
   function getCurrentDate(formatString: string) {
-    return format(Date.now(), formatString, {
+    return format(utcToZonedTime(new Date(), "UTC"), formatString, {
       locale: ptBR,
     });
   }
