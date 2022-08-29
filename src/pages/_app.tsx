@@ -22,6 +22,8 @@ const GlobalStyle = createGlobalStyle`
 
 const AppContainer = styled.div`
   height: 100vh;
+  position: relative;
+  overflow: hidden;
   width: 100vw;
 `;
 
@@ -50,7 +52,7 @@ export const mainTheme = {
 
 const MoneyImage = styled.svg`
   width: 1440px;
-  height: 961px;
+  height: 969px;
   position: absolute;
   z-index: -1;
   top: 0;
