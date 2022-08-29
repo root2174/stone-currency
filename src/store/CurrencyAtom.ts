@@ -1,7 +1,8 @@
 import { atom } from "jotai";
+import { PurchaseType } from "../utils/purchaseUtils";
 
 export const currencyAtom = atom({
-  purchaseType: "",
-  stateTaxes: "0",
-  dollarConversionTotal: 0,
+  purchaseType: "" as PurchaseType,
+  stateTaxes: "0" as string,
+  dollarConversionTotal: 0 as number,
 });
