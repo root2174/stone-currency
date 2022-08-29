@@ -155,7 +155,10 @@ export function CurrencyExchangeForm() {
             render={({ field: { onChange, onBlur, value, ref, name } }) => (
               <NumberFormat
                 onBlur={onBlur}
-                onValueChange={onChange}
+                onValueChange={({ formattedValue, value }) => {
+                  onChange(value);
+                  setValue("formattedValues.dollarQuantity", formattedValue);
+                }}
                 value={getValues("formattedValues.dollarQuantity")}
                 ref={ref}
                 name={name}
