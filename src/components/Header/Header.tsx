@@ -12,6 +12,11 @@ const Container = styled.header`
   gap: 48px;
   padding: 50px 0;
   margin-bottom: 50px;
+
+  @media (max-width: 536px) {
+    flex-direction: column;
+    margin: 0 -50px;
+  }
 `;
 
 const DateContainer = styled.div`
@@ -35,9 +40,7 @@ const ExchangeRateInfo = styled.span`
 `;
 
 export function Header() {
-  const [currentDate, setCurrentDate] = useState(
-    utcToZonedTime(new Date(), "UTC")
-  );
+  const [currentDate, setCurrentDate] = useState(new Date());
 
   useEffect(() => {
     setTimeout(

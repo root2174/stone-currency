@@ -47,7 +47,7 @@ const MoneyImage = styled.svg`
   height: 100vh;
   position: absolute;
   z-index: -1;
-  bottom: 0;
+  top: 0;
   right: 0;
   background: url("/assets/mask.png");
   background-repeat: no-repeat;
