@@ -7,7 +7,7 @@ import { ResultCard } from "../ResultCard";
 
 export function ResultContainer() {
   const [currencyAtomValue, _] = useAtom(currencyAtom);
-  const { data } = useCurrencyConverter();
+  const { data } = useCurrencyConverter({ refetch: false });
 
   const router = useRouter();
 

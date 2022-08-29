@@ -80,15 +80,7 @@ const Images = styled.div`
   }
 `;
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      refetchOnMount: false,
-      refetchOnReconnect: false,
-    },
-  },
-});
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

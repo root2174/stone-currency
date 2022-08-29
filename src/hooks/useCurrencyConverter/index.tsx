@@ -25,7 +25,13 @@ type GetDollarConversionArgs = {
   dollarQuantity: number;
 };
 
-export function useCurrencyConverter() {
+type UseCurrencyConverterOptions = {
+  refetch?: boolean;
+};
+
+export function useCurrencyConverter(
+  options: UseCurrencyConverterOptions = { refetch: true }
+) {
   const fetchCurrencies = (): Promise<Data> =>
     api
       .get("/json/last/USD-BRL")
@@ -34,7 +40,12 @@ export function useCurrencyConverter() {
 
   const { data, isLoading, isSuccess } = useQuery(
     ["currencies"],
-    fetchCurrencies
+    fetchCurrencies,
+    {
+      refetchOnMount: options.refetch,
+      refetchOnReconnect: options.refetch,
+      refetchOnWindowFocus: options.refetch,
+    }
   );
 
   const getDollarConversionTotal = ({
