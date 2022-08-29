@@ -21,14 +21,14 @@ export function ResultContainer() {
     }
   }, [currencyAtomValue.purchaseType, goToMainPage]);
 
-  function FormatMoney(result: number) {
+  const formatMoney = (result: number) => {
     return Intl.NumberFormat("pt-BR").format(result);
   }
 
   return (
     <ResultCard
-      dollarValue={data && FormatMoney(Number(data.USDBRL.bid))}
-      result={FormatMoney(currencyAtomValue.dollarConversionTotal)}
+      dollarValue={data && formatMoney(Number(data.USDBRL.bid))}
+      result={formatMoney(currencyAtomValue.dollarConversionTotal)}
       purchaseType={currencyAtomValue.purchaseType}
       stateTaxes={currencyAtomValue.stateTaxes}
       handleBackClick={goToMainPage}

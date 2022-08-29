@@ -49,7 +49,7 @@ export function Header() {
     );
   }, [currentDate]);
 
-  function getCurrentDateFormatted(formatString: string) {
+  const getCurrentDateFormatted = (formatString: string) => {
     return format(utcToZonedTime(currentDate, "UTC"), formatString, {
       locale: ptBR,
     });
