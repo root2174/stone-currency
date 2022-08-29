@@ -25,7 +25,7 @@ export const calculateDollarTotal = ({
     case "cash":
       return (
         (dollarQuantity + percentage(stateTaxes, dollarQuantity)) *
-        (dollarValue + percentage(IOF.cash, dollarQuantity))
+        (dollarValue + percentage(IOF.cash, dollarValue))
       );
     case "card":
       return (
