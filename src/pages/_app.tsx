@@ -14,10 +14,16 @@ const GlobalStyle = createGlobalStyle`
   `;
 
 const AppContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+`;
+
+const MainContainer = styled.main`
   background: #ffffff;
   max-width: 50vw;
   margin: 0 0 0 50px;
-  height: 60vh;
+  width: 500px;
+  height: 600px;
 `;
 
 export const mainTheme = {
@@ -31,11 +37,11 @@ export const mainTheme = {
   green600: "#008B57",
 };
 
-const BackgroundImage = styled.svg`
+const MoneyImage = styled.svg`
   width: 1440px;
   height: 100vh;
-  z-index: -1;
   position: absolute;
+  z-index: -1;
   bottom: 0;
   right: 0;
   background: url("/assets/mask.png");
@@ -44,6 +50,21 @@ const BackgroundImage = styled.svg`
   background-size: cover;
 `;
 
+const CircularImage = styled.svg`
+  height: 310px;
+  width: 310px;
+  position: absolute;
+  top: 236px;
+  right: 290px;
+  z-index: 1000;
+  background: url("/assets/graph.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+`;
+
+const Images = styled.div``;
+
 const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -51,11 +72,16 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={mainTheme}>
       <QueryClientProvider client={queryClient}>
         <AppContainer>
-          <GlobalStyle />
-          <Header />
-          <Component {...pageProps} />
+          <MainContainer>
+            <GlobalStyle />
+            <Header />
+            <Component {...pageProps} />
+          </MainContainer>
+          <Images>
+            <MoneyImage />
+            <CircularImage />
+          </Images>
         </AppContainer>
-        <BackgroundImage />
       </QueryClientProvider>
     </ThemeProvider>
   );
